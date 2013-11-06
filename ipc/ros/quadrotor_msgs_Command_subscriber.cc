@@ -1,0 +1,32 @@
+#include <ros/ros.h>
+#include <ipc_bridge/ipc_bridge.h>
+
+#include <quadrotor_msgs/Command.h>
+#include <ipc_bridge/msgs/quadrotor_msgs_Command.h>
+
+#define NAMESPACE quadrotor_msgs
+#define NAME Command
+
+ros::Publisher pub;
+NAMESPACE::NAME out_msg;
+
+void callback(const ipc_bridge::NAMESPACE::NAME &msg)
+{
+  out_msg.force.x = msg.force.x;
+  out_msg.force.y = msg.force.y;
+  out_msg.force.z = msg.force.z;
+
+  out_msg.rotation.x = msg.rotation.x;
+  out_msg.rotation.y = msg.rotation.y;
+  out_msg.rotation.z = msg.rotation.z;
+  out_msg.rotation.w = msg.rotation.w;
+
+  std::copy(msg.kR, msg.kR + 3, out_msg.kR.begin());
+  std::copy(msg.kOm, msg.kOm + 3, out_msg.kOm.begin());
+  std::copy(msg.corrections, msg.corrections + 3,
+            out_msg.corrections.begin());
+
+  pub.publish(out_msg);
+}
+
+#include "subscriber.h"
