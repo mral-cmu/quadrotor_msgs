@@ -2,8 +2,8 @@
 Changelog for package quadrotor_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.2 (2014-01-13)
+------------------
 * Moving status msg to quadrotor_msgs package
 * Contributors: Nathan Michael
 
