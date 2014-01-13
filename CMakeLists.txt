@@ -14,6 +14,7 @@ add_message_files(
   Segment.msg
   SegmentedPlan.msg
   CombinedState.msg
+  Status.msg
 )
 
 generate_messages(
