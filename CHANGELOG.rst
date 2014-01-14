@@ -2,8 +2,8 @@
 Changelog for package quadrotor_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.3 (2014-01-14)
+------------------
 * Adding GPLv2 license and documentation base
 * Contributors: Nathan Michael
 
