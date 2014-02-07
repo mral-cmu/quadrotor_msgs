@@ -14,25 +14,20 @@ struct quadrotor_msgs_Command
  rosgraph_msgs_Header header;
  geometry_msgs_Vector3 force;
  geometry_msgs_Quaternion rotation;
- float kR[3];
- float kOm[3];
- float corrections[3];
+ geometry_msgs_Vector3 kR;
+ geometry_msgs_Vector3 kOm;
 
 %{
   quadrotor_msgs_Command()
   {
-    memset(kR, 0, sizeof(kR));
-    memset(kOm, 0, sizeof(kOm));
-    memset(corrections, 0, sizeof(corrections));
   }
   quadrotor_msgs_Command(const quadrotor_msgs_Command& msg)
   {
     header = msg.header;
     force = msg.force;
     rotation = msg.rotation;
-    memcpy(kR, msg.kR, sizeof(kR));
-    memcpy(kOm, msg.kOm, sizeof(kOm));
-    memcpy(corrections, msg.corrections, sizeof(corrections));
+    kR = msg.kR;
+    kOm = msg.kOm;
   }
   ~quadrotor_msgs_Command()
   {
@@ -42,9 +37,8 @@ struct quadrotor_msgs_Command
     header = msg.header;
     force = msg.force;
     rotation = msg.rotation;
-    memcpy(kR, msg.kR, sizeof(kR));
-    memcpy(kOm, msg.kOm, sizeof(kOm));
-    memcpy(corrections, msg.corrections, sizeof(corrections));
+    kR = msg.kR;
+    kOm = msg.kOm;
 
     return *this;
   }

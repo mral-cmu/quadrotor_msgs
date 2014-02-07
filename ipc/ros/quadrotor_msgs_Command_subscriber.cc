@@ -21,10 +21,13 @@ void callback(const ipc_bridge::NAMESPACE::NAME &msg)
   out_msg.rotation.z = msg.rotation.z;
   out_msg.rotation.w = msg.rotation.w;
 
-  std::copy(msg.kR, msg.kR + 3, out_msg.kR.begin());
-  std::copy(msg.kOm, msg.kOm + 3, out_msg.kOm.begin());
-  std::copy(msg.corrections, msg.corrections + 3,
-            out_msg.corrections.begin());
+  out_msg.kR.x = msg.kR.x;
+  out_msg.kR.y = msg.kR.y;
+  out_msg.kR.z = msg.kR.z;
+
+  out_msg.kOm.x = msg.kOm.x;
+  out_msg.kOm.y = msg.kOm.y;
+  out_msg.kOm.z = msg.kOm.z;
 
   pub.publish(out_msg);
 }

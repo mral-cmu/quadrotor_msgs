@@ -1,6 +1,6 @@
 PKG= quadrotor_msgs
-MEX_MSGS= Command
-ROS_MSGS= Command
+MEX_MSGS= Command PWMCommand
+ROS_MSGS= Command PWMCommand
 
 MEX_FILES := $(foreach msg, $(MEX_MSGS), $(PKG)_$(msg))
 ROS_FILES := $(foreach msg, $(ROS_MSGS), $(PKG)_$(msg)_publisher)

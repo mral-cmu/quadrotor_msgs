@@ -16,8 +16,7 @@ namespace ipc_bridge_matlab
       static mxArray* ProcessMessage(const ipc_bridge::quadrotor_msgs::Command &msg)
       {
         const char *fields[] = {"header", "force", "rotation",
-                                "kR", "kOm",
-                                "corrections"};
+                                "kR", "kOm"};
         const int nfields = sizeof(fields)/sizeof(*fields);
         mxArray *out = mxCreateStructMatrix(1, 1, nfields, fields);
 
@@ -27,18 +26,10 @@ namespace ipc_bridge_matlab
                    ipc_bridge_matlab::geometry_msgs::Vector3::ProcessMessage(msg.force));
         mxSetField(out, 0, "rotation",
                    ipc_bridge_matlab::geometry_msgs::Quaternion::ProcessMessage(msg.rotation));
-
-        mxArray *corrections = mxCreateDoubleMatrix(1, 3, mxREAL);
-        std::copy(msg.corrections, msg.corrections + 3, mxGetPr(corrections));
-        mxSetField(out, 0, "corrections", corrections);
-
-        mxArray *kR = mxCreateDoubleMatrix(1, 3, mxREAL);
-        std::copy(msg.kR, msg.kR + 3, mxGetPr(kR));
-        mxSetField(out, 0, "kR", kR);
-
-        mxArray *kOm = mxCreateDoubleMatrix(1, 3, mxREAL);
-        std::copy(msg.kOm, msg.kOm + 3, mxGetPr(kOm));
-        mxSetField(out, 0, "kOm", kOm);
+        mxSetField(out, 0, "kR",
+                   ipc_bridge_matlab::geometry_msgs::Vector3::ProcessMessage(msg.kR));
+        mxSetField(out, 0, "kOm",
+                   ipc_bridge_matlab::geometry_msgs::Vector3::ProcessMessage(msg.kOm));
 
         return out;
       }
@@ -60,16 +51,12 @@ namespace ipc_bridge_matlab
                                                                    msg.rotation);
 
         field = mxGetField(a, 0, "kR");
-        double *p = mxGetPr(field);
-        std::copy(p, p + 3, msg.kR);
+        ipc_bridge_matlab::geometry_msgs::Vector3::ProcessArray(field,
+                                                                msg.kR);
 
         field = mxGetField(a, 0, "kOm");
-        p = mxGetPr(field);
-        std::copy(p, p + 3, msg.kOm);
-
-        field = mxGetField(a, 0, "corrections");
-        p = mxGetPr(field);
-        std::copy(p, p + 3, msg.corrections);
+        ipc_bridge_matlab::geometry_msgs::Vector3::ProcessArray(field,
+                                                                msg.kOm);
 
         return SUCCESS;
       }
@@ -79,6 +66,8 @@ namespace ipc_bridge_matlab
         ipc_bridge_matlab::Header::Cleanup(msg.header);
         ipc_bridge_matlab::geometry_msgs::Vector3::Cleanup(msg.force);
         ipc_bridge_matlab::geometry_msgs::Quaternion::Cleanup(msg.rotation);
+        ipc_bridge_matlab::geometry_msgs::Vector3::Cleanup(msg.kR);
+        ipc_bridge_matlab::geometry_msgs::Vector3::Cleanup(msg.kOm);
 
         return;
       }

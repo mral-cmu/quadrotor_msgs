@@ -11,6 +11,7 @@ find_package(catkin REQUIRED
 add_message_files(
   FILES
   Command.msg
+  PWMCommand.msg
   Segment.msg
   SegmentedPlan.msg
   CombinedState.msg

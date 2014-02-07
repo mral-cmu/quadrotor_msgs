@@ -1,11 +1,11 @@
 #include <ros/ros.h>
 #include <ipc_bridge/ipc_bridge.h>
 
-#include <quadrotor_msgs/Command.h>
-#include <ipc_bridge/msgs/quadrotor_msgs_Command.h>
+#include <quadrotor_msgs/PWMCommand.h>
+#include <ipc_bridge/msgs/quadrotor_msgs_PWMCommand.h>
 
 #define NAMESPACE quadrotor_msgs
-#define NAME Command
+#define NAME PWMCommand
 
 ipc_bridge::Publisher<ipc_bridge::NAMESPACE::NAME> *p;
 ipc_bridge::NAMESPACE::NAME out_msg;
@@ -28,20 +28,7 @@ void callback(const NAMESPACE::NAME::ConstPtr &msg)
       frame_id_prior_size = strlen(msg->header.frame_id.c_str());
     }
 
-  out_msg.force.x = msg->force.x;
-  out_msg.force.y = msg->force.y;
-  out_msg.force.z = msg->force.z;
-  out_msg.rotation.x = msg->rotation.x;
-  out_msg.rotation.y = msg->rotation.y;
-  out_msg.rotation.z = msg->rotation.z;
-  out_msg.rotation.w = msg->rotation.w;
-  out_msg.kR.x = msg->kR.x;
-  out_msg.kR.y = msg->kR.y;
-  out_msg.kR.z = msg->kR.z;
-  out_msg.kOm.x = msg->kOm.x;
-  out_msg.kOm.y = msg->kOm.y;
-  out_msg.kOm.z = msg->kOm.z;
-
+  memcpy(out_msg.motor_pwm, (void*)&(msg->motor_pwm[0]), sizeof(out_msg.motor_pwm));
 
   p->Publish(out_msg);
 }
