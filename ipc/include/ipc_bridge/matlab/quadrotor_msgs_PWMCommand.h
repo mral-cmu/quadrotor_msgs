@@ -1,9 +1,9 @@
-#ifndef __IPC_BRIDGE_MATLAB_QUADROTOR_MSGS_PWM_COMMAND__
-#define __IPC_BRIDGE_MATLAB_QUADROTOR_MSGS_PWM_COMMAND__
-#include <ipc_bridge_matlab/ipc_bridge_matlab.h>
+#ifndef IPC_BRIDGE_MATLAB_QUADROTOR_MSGS_PWM_COMMAND
+#define IPC_BRIDGE_MATLAB_QUADROTOR_MSGS_PWM_COMMAND
+#include <ipc_bridge/ipc_bridge_matlab.h>
 #include <ipc_bridge/msgs/quadrotor_msgs_PWMCommand.h>
 
-#include <rosgraph_msgs_Header.h>
+#include <ipc_bridge/matlab/rosgraph_msgs/rosgraph_msgs_Header.h>
 
 namespace ipc_bridge_matlab
 {

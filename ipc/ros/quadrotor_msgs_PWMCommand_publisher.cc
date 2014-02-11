@@ -33,4 +33,4 @@ void callback(const NAMESPACE::NAME::ConstPtr &msg)
   p->Publish(out_msg);
 }
 
-#include "publisher.h"
+#include <ipc_bridge/publisher.h>

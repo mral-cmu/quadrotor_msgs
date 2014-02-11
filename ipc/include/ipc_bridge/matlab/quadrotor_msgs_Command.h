@@ -1,11 +1,11 @@
-#ifndef __IPC_BRIDGE_MATLAB_QUADROTOR_MSGS_COMMAND__
-#define __IPC_BRIDGE_MATLAB_QUADROTOR_MSGS_COMMAND__
-#include <ipc_bridge_matlab/ipc_bridge_matlab.h>
+#ifndef IPC_BRIDGE_MATLAB_QUADROTOR_MSGS_COMMAND
+#define IPC_BRIDGE_MATLAB_QUADROTOR_MSGS_COMMAND
+#include <ipc_bridge/ipc_bridge_matlab.h>
 #include <ipc_bridge/msgs/quadrotor_msgs_Command.h>
 
-#include <rosgraph_msgs_Header.h>
-#include <geometry_msgs_Vector3.h>
-#include <geometry_msgs_Quaternion.h>
+#include <ipc_bridge/matlab/rosgraph_msgs/rosgraph_msgs_Header.h>
+#include <ipc_bridge/matlab/geometry_msgs/geometry_msgs_Vector3.h>
+#include <ipc_bridge/matlab/geometry_msgs/geometry_msgs_Quaternion.h>
 
 namespace ipc_bridge_matlab
 {

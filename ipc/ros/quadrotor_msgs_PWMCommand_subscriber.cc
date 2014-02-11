@@ -25,4 +25,4 @@ void callback(const ipc_bridge::NAMESPACE::NAME &msg)
   pub.publish(out_msg);
 }
 
-#include "subscriber.h"
+#include <ipc_bridge/subscriber.h>

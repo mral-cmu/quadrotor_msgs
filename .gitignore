@@ -17,7 +17,7 @@ lib
 
 .svn
 
-ipc_bridge
+ipc/include/ipc_bridge/msgs/
 
 msg_gen
 srv_gen
