@@ -29,7 +29,7 @@ catkin_package(
   CATKIN_DEPENDS message_runtime geometry_msgs nav_msgs sensor_msgs
 )
 
-find_package(ipc_bridge)
+find_package(ipc_bridge QUIET)
 if(ipc_bridge_FOUND)
   set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${ipc_bridge_MODULE_PATH}")
   find_package(IPC REQUIRED)
