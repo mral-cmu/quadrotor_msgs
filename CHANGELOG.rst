@@ -2,6 +2,16 @@
 Changelog for package quadrotor_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Quieting output if IPC is not found
+* Added missing IPC header include variable
+* Fixing incorrect call to find_package without specifying components
+* Updates to support rework of IPC bridge
+* New PWMCommand and IPC bridge interface
+* Updating license tag to specify GPLv2
+* Contributors: Nathan Michael
+
 0.0.3 (2014-01-14)
 ------------------
 * Adding GPLv2 license and documentation base
