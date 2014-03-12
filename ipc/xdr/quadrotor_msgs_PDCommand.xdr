@@ -1,0 +1,31 @@
+%{
+#include <cstring>
+#include <ipc_bridge/msgs/rosgraph_msgs_Header.h>
+%}
+
+ipc_type rosgraph_msgs_Header;
+
+struct quadrotor_msgs_PDCommand
+{
+ rosgraph_msgs_Header header;
+ double roll;
+ double pitch;
+ double yaw;
+ double thrust;
+ double kp_roll;
+ double kp_pitch;
+ double kp_yaw;
+ double kd_roll;
+ double kd_pitch;
+ double kd_yaw;
+};
+
+%{
+namespace ipc_bridge
+{
+    namespace quadrotor_msgs
+    {
+        typedef quadrotor_msgs_PDCommand PDCommand;
+    }
+}
+%}
