@@ -1,7 +1,7 @@
 #include <ros/ros.h>
 #include <ipc_bridge/ipc_bridge.h>
 
-#include <quadrotor_msgs/PWMCommand.h>
+#include <quadrotor_msgs/PDCommand.h>
 #include <ipc_bridge/msgs/quadrotor_msgs_PDCommand.h>
 
 #define NAMESPACE quadrotor_msgs
@@ -22,6 +22,7 @@ void callback(const ipc_bridge::NAMESPACE::NAME &msg)
   out_msg.roll = msg.roll;
   out_msg.pitch = msg.pitch;
   out_msg.yaw = msg.yaw;
+  out_msg.thrust = msg.thrust;
 
   out_msg.kp_roll = msg.kp_roll;
   out_msg.kp_pitch = msg.kp_pitch;
