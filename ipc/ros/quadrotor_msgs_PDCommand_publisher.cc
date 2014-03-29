@@ -33,6 +33,10 @@ void callback(const NAMESPACE::NAME::ConstPtr &msg)
   out_msg.yaw = msg->yaw;
   out_msg.thrust = msg->thrust;
 
+  out_msg.roll_speed = msg->roll_speed;
+  out_msg.pitch_speed = msg->pitch_speed;
+  out_msg.yaw_speed = msg->yaw_speed;
+
   out_msg.kp_roll = msg->kp_roll;
   out_msg.kp_pitch = msg->kp_pitch;
   out_msg.kp_yaw = msg->kp_yaw;
@@ -40,6 +44,9 @@ void callback(const NAMESPACE::NAME::ConstPtr &msg)
   out_msg.kd_roll = msg->kd_roll;
   out_msg.kd_pitch = msg->kd_pitch;
   out_msg.kd_yaw = msg->kd_yaw;
+
+  out_msg.gains_seq = msg->gains_seq;
+  out_msg.speeds_seq = msg->speeds_seq;
 
   p->Publish(out_msg);
 }

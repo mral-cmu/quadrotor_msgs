@@ -1,11 +1,11 @@
 #include <ros/ros.h>
 #include <ipc_bridge/ipc_bridge.h>
 
-#include <quadrotor_msgs/Command.h>
-#include <ipc_bridge/msgs/quadrotor_msgs_Command.h>
+#include <quadrotor_msgs/SO3Command.h>
+#include <ipc_bridge/msgs/quadrotor_msgs_SO3Command.h>
 
 #define NAMESPACE quadrotor_msgs
-#define NAME Command
+#define NAME SO3Command
 
 ipc_bridge::Publisher<ipc_bridge::NAMESPACE::NAME> *p;
 ipc_bridge::NAMESPACE::NAME out_msg;

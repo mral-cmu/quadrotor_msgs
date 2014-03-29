@@ -12,12 +12,17 @@ struct quadrotor_msgs_PDCommand
  double pitch;
  double yaw;
  double thrust;
+ double roll_speed;
+ double pitch_speed;
+ double yaw_speed;
  double kp_roll;
  double kp_pitch;
  double kp_yaw;
  double kd_roll;
  double kd_pitch;
  double kd_yaw;
+ unsigned int gains_seq;
+ unsigned int speeds_seq;
 };
 
 %{

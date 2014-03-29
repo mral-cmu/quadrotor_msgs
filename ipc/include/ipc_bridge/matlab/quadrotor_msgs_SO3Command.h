@@ -1,7 +1,7 @@
-#ifndef IPC_BRIDGE_MATLAB_QUADROTOR_MSGS_COMMAND
-#define IPC_BRIDGE_MATLAB_QUADROTOR_MSGS_COMMAND
+#ifndef IPC_BRIDGE_MATLAB_QUADROTOR_MSGS_SO3_COMMAND
+#define IPC_BRIDGE_MATLAB_QUADROTOR_MSGS_SO3_COMMAND
 #include <ipc_bridge/ipc_bridge_matlab.h>
-#include <ipc_bridge/msgs/quadrotor_msgs_Command.h>
+#include <ipc_bridge/msgs/quadrotor_msgs_SO3Command.h>
 
 #include <ipc_bridge/matlab/rosgraph_msgs/rosgraph_msgs_Header.h>
 #include <ipc_bridge/matlab/geometry_msgs/geometry_msgs_Vector3.h>
@@ -11,9 +11,9 @@ namespace ipc_bridge_matlab
 {
   namespace quadrotor_msgs
   {
-    namespace Command
+    namespace SO3Command
     {
-      static mxArray* ProcessMessage(const ipc_bridge::quadrotor_msgs::Command &msg)
+      static mxArray* ProcessMessage(const ipc_bridge::quadrotor_msgs::SO3Command &msg)
       {
         const char *fields[] = {"header", "force", "rotation",
                                 "kR", "kOm"};
@@ -35,7 +35,7 @@ namespace ipc_bridge_matlab
       }
 
       static int ProcessArray(const mxArray *a,
-                              ipc_bridge::quadrotor_msgs::Command &msg)
+                              ipc_bridge::quadrotor_msgs::SO3Command &msg)
       {
         mxArray *field;
 
@@ -61,7 +61,7 @@ namespace ipc_bridge_matlab
         return SUCCESS;
       }
 
-      static void Cleanup(ipc_bridge::quadrotor_msgs::Command &msg)
+      static void Cleanup(ipc_bridge::quadrotor_msgs::SO3Command &msg)
       {
         ipc_bridge_matlab::Header::Cleanup(msg.header);
         ipc_bridge_matlab::geometry_msgs::Vector3::Cleanup(msg.force);

@@ -9,7 +9,7 @@ ipc_type rosgraph_msgs_Header;
 ipc_type geometry_msgs_Vector3;
 ipc_type geometry_msgs_Quaternion;
 
-struct quadrotor_msgs_Command
+struct quadrotor_msgs_SO3Command
 {
  rosgraph_msgs_Header header;
  geometry_msgs_Vector3 force;
@@ -18,10 +18,10 @@ struct quadrotor_msgs_Command
  geometry_msgs_Vector3 kOm;
 
 %{
-  quadrotor_msgs_Command()
+  quadrotor_msgs_SO3Command()
   {
   }
-  quadrotor_msgs_Command(const quadrotor_msgs_Command& msg)
+  quadrotor_msgs_SO3Command(const quadrotor_msgs_SO3Command& msg)
   {
     header = msg.header;
     force = msg.force;
@@ -29,10 +29,10 @@ struct quadrotor_msgs_Command
     kR = msg.kR;
     kOm = msg.kOm;
   }
-  ~quadrotor_msgs_Command()
+  ~quadrotor_msgs_SO3Command()
   {
   }
-  quadrotor_msgs_Command& operator= (const quadrotor_msgs_Command& msg)
+  quadrotor_msgs_SO3Command& operator= (const quadrotor_msgs_SO3Command& msg)
   {
     header = msg.header;
     force = msg.force;
@@ -51,7 +51,7 @@ namespace ipc_bridge
 {
     namespace quadrotor_msgs
     {
-        typedef quadrotor_msgs_Command Command;
+        typedef quadrotor_msgs_SO3Command SO3Command;
     }
 }
 %}
