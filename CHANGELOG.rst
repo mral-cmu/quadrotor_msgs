@@ -2,6 +2,12 @@
 Changelog for package quadrotor_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.0.5 (2014-03-26)
+------------------
+* Fix thrust setting and incorrect header include
+* Adding support for PDCommands
+* Contributors: Nathan Michael
+
 0.0.4 (2014-02-25)
 ------------------
 * Quieting output if IPC is not found
