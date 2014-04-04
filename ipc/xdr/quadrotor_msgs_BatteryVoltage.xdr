@@ -1,0 +1,14 @@
+struct quadrotor_msgs_BatteryVoltage
+{
+ float voltage;
+};
+
+%{
+namespace ipc_bridge
+{
+    namespace quadrotor_msgs
+    {
+        typedef quadrotor_msgs_BatteryVoltage BatteryVoltage;
+    }
+}
+%}

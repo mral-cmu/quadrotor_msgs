@@ -17,6 +17,7 @@ add_message_files(
   SegmentedPlan.msg
   CombinedState.msg
   Status.msg
+  BatteryVoltage.msg
 )
 
 generate_messages(
