@@ -2,6 +2,13 @@
 Changelog for package quadrotor_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Adding support for custom BatteryVoltage msg
+* Merge branch 'develop' of nmichael.frc.ri.cmu.edu:msgs/quadrotor_msgs into develop
+* Updating PDCommand support and renaming Command to SO3Command
+* Contributors: Nathan Michael
+
 0.0.5 (2014-03-26)
 ------------------
 * Fix thrust setting and incorrect header include
