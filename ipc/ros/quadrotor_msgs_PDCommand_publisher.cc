@@ -30,7 +30,7 @@ void callback(const NAMESPACE::NAME::ConstPtr &msg)
 
   out_msg.roll = msg->roll;
   out_msg.pitch = msg->pitch;
-  out_msg.yaw = msg->yaw;
+  out_msg.yaw_delta = msg->yaw_delta;
   out_msg.thrust = msg->thrust;
 
   out_msg.roll_speed = msg->roll_speed;
@@ -39,7 +39,6 @@ void callback(const NAMESPACE::NAME::ConstPtr &msg)
 
   out_msg.kp_roll = msg->kp_roll;
   out_msg.kp_pitch = msg->kp_pitch;
-  out_msg.kp_yaw = msg->kp_yaw;
 
   out_msg.kd_roll = msg->kd_roll;
   out_msg.kd_pitch = msg->kd_pitch;

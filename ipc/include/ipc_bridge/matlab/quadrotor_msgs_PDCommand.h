@@ -13,9 +13,9 @@ namespace ipc_bridge_matlab
     {
       static mxArray* ProcessMessage(const ipc_bridge::quadrotor_msgs::PDCommand &msg)
       {
-        const char *fields[] = {"header", "roll", "pitch", "yaw", "thrust",
+        const char *fields[] = {"header", "roll", "pitch", "yaw_delta", "thrust",
                                 "roll_speed", "pitch_speed", "yaw_speed",
-                                "kp_roll", "kp_pitch", "kp_yaw",
+                                "kp_roll", "kp_pitch",
                                 "kd_roll", "kd_pitch", "kd_yaw",
                                 "gains_seq", "speeds_seq"};
         const int nfields = sizeof(fields)/sizeof(*fields);
@@ -26,14 +26,13 @@ namespace ipc_bridge_matlab
 
         mxSetField(out, 0, "roll", mxCreateDoubleScalar(msg.roll));
         mxSetField(out, 0, "pitch", mxCreateDoubleScalar(msg.pitch));
-        mxSetField(out, 0, "yaw", mxCreateDoubleScalar(msg.yaw));
+        mxSetField(out, 0, "yaw_delta", mxCreateDoubleScalar(msg.yaw_delta));
         mxSetField(out, 0, "thrust", mxCreateDoubleScalar(msg.thrust));
         mxSetField(out, 0, "roll_speed", mxCreateDoubleScalar(msg.roll_speed));
         mxSetField(out, 0, "pitch_speed", mxCreateDoubleScalar(msg.pitch_speed));
         mxSetField(out, 0, "yaw_speed", mxCreateDoubleScalar(msg.yaw_speed));
         mxSetField(out, 0, "kp_roll", mxCreateDoubleScalar(msg.kp_roll));
         mxSetField(out, 0, "kp_pitch", mxCreateDoubleScalar(msg.kp_pitch));
-        mxSetField(out, 0, "kp_yaw", mxCreateDoubleScalar(msg.kp_yaw));
         mxSetField(out, 0, "kd_roll", mxCreateDoubleScalar(msg.kd_roll));
         mxSetField(out, 0, "kd_pitch", mxCreateDoubleScalar(msg.kd_pitch));
         mxSetField(out, 0, "kd_yaw", mxCreateDoubleScalar(msg.kd_yaw));
@@ -57,8 +56,8 @@ namespace ipc_bridge_matlab
         field = mxGetField(a, 0, "pitch");
         msg.pitch = mxGetScalar(field);
 
-        field = mxGetField(a, 0, "yaw");
-        msg.yaw = mxGetScalar(field);
+        field = mxGetField(a, 0, "yaw_delta");
+        msg.yaw_delta = mxGetScalar(field);
 
         field = mxGetField(a, 0, "thrust");
         msg.thrust = mxGetScalar(field);
@@ -77,9 +76,6 @@ namespace ipc_bridge_matlab
 
         field = mxGetField(a, 0, "kp_pitch");
         msg.kp_pitch = mxGetScalar(field);
-
-        field = mxGetField(a, 0, "kp_yaw");
-        msg.kp_yaw = mxGetScalar(field);
 
         field = mxGetField(a, 0, "kd_roll");
         msg.kd_roll = mxGetScalar(field);
