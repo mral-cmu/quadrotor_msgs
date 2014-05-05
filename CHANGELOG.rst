@@ -2,8 +2,8 @@
 Changelog for package quadrotor_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.7 (2014-05-05)
+------------------
 * Changes to handling of PDCommands and yaw_delta
 * Contributors: Nathan Michael
 
