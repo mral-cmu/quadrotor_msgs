@@ -2,6 +2,11 @@
 Changelog for package quadrotor_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Changes to handling of PDCommands and yaw_delta
+* Contributors: Nathan Michael
+
 0.0.6 (2014-04-07)
 ------------------
 * Adding support for custom BatteryVoltage msg
