@@ -18,6 +18,7 @@ add_message_files(
   CombinedState.msg
   Status.msg
   BatteryVoltage.msg
+  AltitudeObservation.msg
 )
 
 generate_messages(
