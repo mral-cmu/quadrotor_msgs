@@ -19,6 +19,7 @@ add_message_files(
   Status.msg
   BatteryVoltage.msg
   AltitudeObservation.msg
+  HeightDelta.msg
 )
 
 generate_messages(
