@@ -1,0 +1,10 @@
+std_msgs/Header header
+geometry_msgs/Vector3 pos
+geometry_msgs/Vector3 vel
+float32 yaw
+float32 wz
+float32 phi_trim
+float32 theta_trim
+float32 az_trim
+float32 Mz_trim
+float32[144] covariance
