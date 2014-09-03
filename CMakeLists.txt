@@ -19,7 +19,6 @@ add_message_files(
   Status.msg
   BatteryVoltage.msg
   AltitudeObservation.msg
-  AltitudeInfo.msg
   HeightDelta.msg
   StaticTrimInfo.msg
 )

@@ -1,6 +1,0 @@
-std_msgs/Header header
-float32 downward_height
-float32 local_elevation
-float32 so3_error
-float32 downward_range
-float32 alt_buffer_stdev
