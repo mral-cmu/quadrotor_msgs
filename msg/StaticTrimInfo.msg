@@ -7,4 +7,6 @@ float32 phi_trim
 float32 theta_trim
 float32 az_trim
 float32 Mz_trim
+float32 u_Mz
+geometry_msgs/Vector3 u_acc
 float32[144] covariance
