@@ -21,6 +21,7 @@ add_message_files(
   AltitudeObservation.msg
   HeightDelta.msg
   StaticTrimInfo.msg
+  TransientTrimInfo.msg
 )
 
 generate_messages(
