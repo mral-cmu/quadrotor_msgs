@@ -2,6 +2,17 @@
 Changelog for package quadrotor_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* added message type for transient trim observer information
+* add u_Mz and u_acc fields to StaticTrimInfo message
+* Removing AltitudeInfo messsage and absorbing it into AltitudeObservation
+* added message type for static trim estimator information
+* added AltitudeInfo message
+* add HeightDelta message
+* Adding AltitudeObservation.msg (previously in altitude_pf)
+* Contributors: Erik Nelson, John Yao, Nathan Michael
+
 0.0.7 (2014-05-05)
 ------------------
 * Changes to handling of PDCommands and yaw_delta
