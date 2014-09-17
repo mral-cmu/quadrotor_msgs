@@ -2,8 +2,8 @@
 Changelog for package quadrotor_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.8 (2014-09-16)
+------------------
 * added message type for transient trim observer information
 * add u_Mz and u_acc fields to StaticTrimInfo message
 * Removing AltitudeInfo messsage and absorbing it into AltitudeObservation
