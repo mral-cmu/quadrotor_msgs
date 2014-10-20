@@ -22,6 +22,7 @@ add_message_files(
   HeightDelta.msg
   StaticTrimInfo.msg
   TransientTrimInfo.msg
+  Spline.msg
 )
 
 generate_messages(
