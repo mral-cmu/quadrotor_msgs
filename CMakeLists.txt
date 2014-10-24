@@ -22,6 +22,7 @@ add_message_files(
   HeightDelta.msg
   StaticTrimInfo.msg
   TransientTrimInfo.msg
+  LocalOdometry.msg
 )
 
 generate_messages(
