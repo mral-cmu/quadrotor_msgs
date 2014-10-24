@@ -2,8 +2,8 @@
 Changelog for package quadrotor_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.9 (2014-10-24)
+------------------
 * Merge branch 'feature/local_odometry' into 'develop'
   Feature/local odometry
   See merge request !1

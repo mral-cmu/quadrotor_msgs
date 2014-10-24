@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>quadrotor_msgs</name>
-  <version>0.0.8</version>
+  <version>0.0.9</version>
   <description>The quadrotor_msgs package</description>
 
   <maintainer email="nmichael@cmu.edu">Nathan Michael</maintainer>
