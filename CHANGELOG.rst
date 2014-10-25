@@ -2,6 +2,14 @@
 Changelog for package quadrotor_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.0.9 (2014-10-24)
+------------------
+* Merge branch 'feature/local_odometry' into 'develop'
+  Feature/local odometry
+  See merge request !1
+* added local odometry message type
+* Contributors: John Yao, Nathan Michael
+
 0.0.8 (2014-09-16)
 ------------------
 * added message type for transient trim observer information
