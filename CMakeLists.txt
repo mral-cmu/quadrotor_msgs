@@ -23,6 +23,7 @@ add_message_files(
   StaticTrimInfo.msg
   TransientTrimInfo.msg
   LocalOdometry.msg
+  Spline.msg
 )
 
 generate_messages(
