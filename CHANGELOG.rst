@@ -2,6 +2,17 @@
 Changelog for package quadrotor_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'feature/spline_msg' into 'develop'
+  Feature/spline msg
+  See merge request !2
+* Merge branch 'develop' into feature/spline_msg
+  Conflicts:
+  CMakeLists.txt
+* Added new Spline message type to send trajectory coefficients
+* Contributors: Nathan Michael, Vishnu Desaraju
+
 0.0.9 (2014-10-24)
 ------------------
 * Merge branch 'feature/local_odometry' into 'develop'
