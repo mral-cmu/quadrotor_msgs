@@ -2,8 +2,8 @@
 Changelog for package quadrotor_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.10 (2014-11-04)
+-------------------
 * Merge branch 'feature/spline_msg' into 'develop'
   Feature/spline msg
   See merge request !2
