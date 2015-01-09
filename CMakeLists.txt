@@ -24,6 +24,7 @@ add_message_files(
   TransientTrimInfo.msg
   LocalOdometry.msg
   Spline.msg
+  GPIOTime.msg
 )
 
 generate_messages(
