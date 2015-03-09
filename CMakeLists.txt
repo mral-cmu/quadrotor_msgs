@@ -12,6 +12,7 @@ add_message_files(
   FILES
   SO3Command.msg
   PWMCommand.msg
+  RPMCommand.msg
   PDCommand.msg
   Segment.msg
   SegmentedPlan.msg
