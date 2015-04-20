@@ -14,6 +14,7 @@ add_message_files(
   PWMCommand.msg
   RPMCommand.msg
   PDCommand.msg
+  CascadedCommand.msg
   Segment.msg
   SegmentedPlan.msg
   CombinedState.msg

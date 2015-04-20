@@ -1,0 +1,60 @@
+%{
+#include <cstring>
+#include <ipc_bridge/msgs/rosgraph_msgs_Header.h>
+#include <ipc_bridge/msgs/geometry_msgs_Quaternion.h>
+#include <ipc_bridge/msgs/geometry_msgs_Vector3.h>
+%}
+
+ipc_type rosgraph_msgs_Header;
+ipc_type geometry_msgs_Quaternion;
+ipc_type geometry_msgs_Vector3;
+
+struct quadrotor_msgs_CascadedCommand
+{
+ rosgraph_msgs_Header header;
+ double thrust;
+ geometry_msgs_Quaternion orientation;
+ geometry_msgs_Vector3 angular_velocity;
+ geometry_msgs_Vector3 kR;
+ geometry_msgs_Vector3 kOm;
+
+%{
+  quadrotor_msgs_CascadedCommand()
+  {
+  }
+  quadrotor_msgs_CascadedCommand(const quadrotor_msgs_CascadedCommand& msg)
+  {
+    header = msg.header;
+    thrust = msg.thrust;
+    orientation = msg.orientation;
+    angular_velocity = msg.angular_velocity;
+    kR = msg.kR;
+    kOm = msg.kOm;
+  }
+  ~quadrotor_msgs_CascadedCommand()
+  {
+  }
+  quadrotor_msgs_CascadedCommand& operator= (const quadrotor_msgs_CascadedCommand& msg)
+  {
+    header = msg.header;
+    thrust = msg.thrust;
+    orientation = msg.orientation;
+    angular_velocity = msg.angular_velocity;
+    kR = msg.kR;
+    kOm = msg.kOm;
+
+    return *this;
+  }
+%}
+
+};
+
+%{
+namespace ipc_bridge
+{
+    namespace quadrotor_msgs
+    {
+        typedef quadrotor_msgs_CascadedCommand CascadedCommand;
+    }
+}
+%}
