@@ -16,6 +16,7 @@ namespace ipc_bridge_matlab
       static mxArray* ProcessMessage(const ipc_bridge::quadrotor_msgs::CascadedCommand &msg)
       {
         const char *fields[] = {"header",
+                                "current_heading",
                                 "thrust",
                                 "orientation",
                                 "angular_velocity",
@@ -25,6 +26,7 @@ namespace ipc_bridge_matlab
 
         mxSetField(out, 0, "header",
                    ipc_bridge_matlab::Header::ProcessMessage(msg.header));
+        mxSetField(out, 0, "current_heading", mxCreateDoubleScalar(msg.current_heading));
         mxSetField(out, 0, "thrust", mxCreateDoubleScalar(msg.thrust));
         mxSetField(out, 0, "orientation",
                    ipc_bridge_matlab::geometry_msgs::Quaternion::ProcessMessage(msg.orientation));
@@ -45,6 +47,9 @@ namespace ipc_bridge_matlab
 
         field = mxGetField(a, 0, "header");
         ipc_bridge_matlab::Header::ProcessArray(field, msg.header);
+
+        field = mxGetField(a, 0, "current_heading");
+        msg.current_heading = mxGetScalar(field);
 
         field = mxGetField(a, 0, "thrust");
         msg.thrust = mxGetScalar(field);

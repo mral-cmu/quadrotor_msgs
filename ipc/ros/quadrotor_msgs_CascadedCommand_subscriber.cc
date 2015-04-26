@@ -12,6 +12,7 @@ NAMESPACE::NAME out_msg;
 
 void callback(const ipc_bridge::NAMESPACE::NAME &msg)
 {
+  out_msg.current_heading = msg.current_heading;
   out_msg.thrust = msg.thrust;
 
   out_msg.orientation.x = msg.orientation.x;

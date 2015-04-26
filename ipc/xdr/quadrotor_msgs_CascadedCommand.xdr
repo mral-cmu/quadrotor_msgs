@@ -12,6 +12,7 @@ ipc_type geometry_msgs_Vector3;
 struct quadrotor_msgs_CascadedCommand
 {
  rosgraph_msgs_Header header;
+ double current_heading;
  double thrust;
  geometry_msgs_Quaternion orientation;
  geometry_msgs_Vector3 angular_velocity;
@@ -25,6 +26,7 @@ struct quadrotor_msgs_CascadedCommand
   quadrotor_msgs_CascadedCommand(const quadrotor_msgs_CascadedCommand& msg)
   {
     header = msg.header;
+    current_heading = msg.current_heading;
     thrust = msg.thrust;
     orientation = msg.orientation;
     angular_velocity = msg.angular_velocity;
@@ -37,6 +39,7 @@ struct quadrotor_msgs_CascadedCommand
   quadrotor_msgs_CascadedCommand& operator= (const quadrotor_msgs_CascadedCommand& msg)
   {
     header = msg.header;
+    current_heading = msg.current_heading;
     thrust = msg.thrust;
     orientation = msg.orientation;
     angular_velocity = msg.angular_velocity;

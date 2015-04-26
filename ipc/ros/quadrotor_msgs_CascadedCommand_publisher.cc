@@ -28,6 +28,7 @@ void callback(const NAMESPACE::NAME::ConstPtr &msg)
     frame_id_prior_size = strlen(msg->header.frame_id.c_str());
   }
 
+  out_msg.current_heading = msg->current_heading;
   out_msg.thrust = msg->thrust;
   out_msg.orientation.x = msg->orientation.x;
   out_msg.orientation.y = msg->orientation.y;
