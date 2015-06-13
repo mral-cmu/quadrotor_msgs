@@ -2,6 +2,16 @@
 Changelog for package quadrotor_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.0.11 (2015-06-12)
+-------------------
+* Adding current_heading entry to enable yaw control from external reference
+* Adding support for new cascaded command
+* Add include directory to CMakeLists
+* Adding support for RPMCommand message
+* add header for the GPIOTime message
+* GPIOTime msg definition
+* Contributors: Nathan Michael, Zheng Rong
+
 0.0.10 (2014-11-04)
 -------------------
 * Merge branch 'feature/spline_msg' into 'develop'
