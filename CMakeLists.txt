@@ -27,6 +27,7 @@ add_message_files(
   LocalOdometry.msg
   Spline.msg
   GPIOTime.msg
+  FSMMode.msg
 )
 
 generate_messages(
