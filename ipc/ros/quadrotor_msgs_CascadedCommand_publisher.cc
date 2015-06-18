@@ -37,6 +37,9 @@ void callback(const NAMESPACE::NAME::ConstPtr &msg)
   out_msg.angular_velocity.x = msg->angular_velocity.x;
   out_msg.angular_velocity.y = msg->angular_velocity.y;
   out_msg.angular_velocity.z = msg->angular_velocity.z;
+  out_msg.angular_acceleration.x = msg->angular_acceleration.x;
+  out_msg.angular_acceleration.y = msg->angular_acceleration.y;
+  out_msg.angular_acceleration.z = msg->angular_acceleration.z;  
   out_msg.kR.x = msg->kR.x;
   out_msg.kR.y = msg->kR.y;
   out_msg.kR.z = msg->kR.z;

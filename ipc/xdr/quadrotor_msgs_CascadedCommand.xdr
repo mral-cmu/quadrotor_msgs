@@ -16,6 +16,7 @@ struct quadrotor_msgs_CascadedCommand
  double thrust;
  geometry_msgs_Quaternion orientation;
  geometry_msgs_Vector3 angular_velocity;
+ geometry_msgs_Vector3 angular_acceleration;
  geometry_msgs_Vector3 kR;
  geometry_msgs_Vector3 kOm;
 
@@ -30,6 +31,7 @@ struct quadrotor_msgs_CascadedCommand
     thrust = msg.thrust;
     orientation = msg.orientation;
     angular_velocity = msg.angular_velocity;
+    angular_acceleration = msg.angular_acceleration;
     kR = msg.kR;
     kOm = msg.kOm;
   }
@@ -43,6 +45,7 @@ struct quadrotor_msgs_CascadedCommand
     thrust = msg.thrust;
     orientation = msg.orientation;
     angular_velocity = msg.angular_velocity;
+	 angular_acceleration = msg.angular_acceleration;
     kR = msg.kR;
     kOm = msg.kOm;
 
