@@ -28,6 +28,7 @@ add_message_files(
   Spline.msg
   GPIOTime.msg
   FSMMode.msg
+  TrackingError.msg
 )
 
 generate_messages(
