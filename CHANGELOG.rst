@@ -2,6 +2,12 @@
 Changelog for package quadrotor_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.0.12 (2015-07-03)
+-------------------
+* Added TrackingError msg
+* Added FSMMode message
+* Contributors: Vishnu Desaraju
+
 0.0.11 (2015-06-12)
 -------------------
 * Adding current_heading entry to enable yaw control from external reference
