@@ -2,6 +2,14 @@
 Changelog for package quadrotor_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.0.13 (2015-08-04)
+-------------------
+* Merge branch 'feature/fsm_mode' into 'develop'
+  Feature/fsm mode
+  See merge request !3
+* Updated FSMMode msg to match mdes in FSM
+* Contributors: Nathan Michael, Vishnu Desaraju
+
 0.0.12 (2015-07-03)
 -------------------
 * Added TrackingError msg
