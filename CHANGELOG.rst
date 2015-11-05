@@ -2,6 +2,15 @@
 Changelog for package quadrotor_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.0.14 (2015-11-05)
+-------------------
+* Merge branch 'bugfix/add_std_msgs_dependency' into 'develop'
+  Add dependency on std_msgs.
+  Closes #1.
+  See merge request !4
+* Add dependency on std_msgs. Closes #1.
+* Contributors: Nathan Michael
+
 0.0.13 (2015-08-04)
 -------------------
 * Merge branch 'feature/fsm_mode' into 'develop'
