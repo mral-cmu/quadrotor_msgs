@@ -22,10 +22,6 @@ add_message_files(
   Status.msg
   BatteryVoltage.msg
   AltitudeObservation.msg
-  HeightDelta.msg
-  StaticTrimInfo.msg
-  TransientTrimInfo.msg
-  LocalOdometry.msg
   Spline.msg
   GPIOTime.msg
   FSMMode.msg
