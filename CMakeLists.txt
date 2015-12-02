@@ -22,6 +22,7 @@ add_message_files(
   Status.msg
   BatteryVoltage.msg
   AltitudeObservation.msg
+  FlowObservation.msg
   Spline.msg
   GPIOTime.msg
   FSMMode.msg
