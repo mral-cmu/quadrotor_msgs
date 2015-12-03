@@ -1,4 +1,3 @@
 std_msgs/Header header
-float32 vbx
-float32 vby
-float32[4] covariance
+geometry_msgs/Vector3 velocity
+float32[9] covariance
