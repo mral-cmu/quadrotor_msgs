@@ -22,6 +22,7 @@ add_message_files(
   Status.msg
   BatteryVoltage.msg
   AltitudeObservation.msg
+  LidarLiteOutput.msg
   FlowObservation.msg
   Spline.msg
   GPIOTime.msg
