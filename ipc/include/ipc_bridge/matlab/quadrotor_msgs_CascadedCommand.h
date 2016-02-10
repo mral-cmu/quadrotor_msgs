@@ -20,6 +20,7 @@ namespace ipc_bridge_matlab
                                 "thrust",
                                 "orientation",
                                 "angular_velocity",
+							    "angular_acceleration",
                                 "kR", "kOm"};
         const int nfields = sizeof(fields)/sizeof(*fields);
         mxArray *out = mxCreateStructMatrix(1, 1, nfields, fields);
@@ -32,6 +33,8 @@ namespace ipc_bridge_matlab
                    ipc_bridge_matlab::geometry_msgs::Quaternion::ProcessMessage(msg.orientation));
         mxSetField(out, 0, "angular_velocity",
                    ipc_bridge_matlab::geometry_msgs::Vector3::ProcessMessage(msg.angular_velocity));
+        mxSetField(out, 0, "angular_acceleration",
+                   ipc_bridge_matlab::geometry_msgs::Vector3::ProcessMessage(msg.angular_acceleration));
         mxSetField(out, 0, "kR",
                    ipc_bridge_matlab::geometry_msgs::Vector3::ProcessMessage(msg.kR));
         mxSetField(out, 0, "kOm",
@@ -62,6 +65,10 @@ namespace ipc_bridge_matlab
         ipc_bridge_matlab::geometry_msgs::Vector3::ProcessArray(field,
                                                                 msg.angular_velocity);
 
+        field = mxGetField(a, 0, "angular_acceleration");
+        ipc_bridge_matlab::geometry_msgs::Vector3::ProcessArray(field,
+                                                                msg.angular_acceleration);
+
         field = mxGetField(a, 0, "kR");
         ipc_bridge_matlab::geometry_msgs::Vector3::ProcessArray(field, msg.kR);
 
@@ -76,6 +83,7 @@ namespace ipc_bridge_matlab
         ipc_bridge_matlab::Header::Cleanup(msg.header);
         ipc_bridge_matlab::geometry_msgs::Quaternion::Cleanup(msg.orientation);
         ipc_bridge_matlab::geometry_msgs::Vector3::Cleanup(msg.angular_velocity);
+        ipc_bridge_matlab::geometry_msgs::Vector3::Cleanup(msg.angular_acceleration);
         ipc_bridge_matlab::geometry_msgs::Vector3::Cleanup(msg.kR);
         ipc_bridge_matlab::geometry_msgs::Vector3::Cleanup(msg.kOm);
 
