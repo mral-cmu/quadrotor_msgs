@@ -2,6 +2,17 @@
 Changelog for package quadrotor_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.0.15 (2016-02-11)
+-------------------
+* message to log power with timestamp
+* move LidarLiteOutput message from lidar_lite to quadrotor_msgs
+* add z-component of velocity for lidar-lite observation
+* adding message for PX4Flow body velocity estimate
+* Removing deprecated msgs. Addresses issue #2
+* added std_msgs to package.xml
+* modification of the "cascaded_command" message to include angular acceleration
+* Contributors: John Yao, Nathan Michael, Wennie Tabib, eacappo
+
 0.0.14 (2015-11-05)
 -------------------
 * Merge branch 'bugfix/add_std_msgs_dependency' into 'develop'
