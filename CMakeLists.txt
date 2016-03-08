@@ -29,6 +29,7 @@ add_message_files(
   GPIOTime.msg
   FSMMode.msg
   TrackingError.msg
+  AccelDisturbance.msg
 )
 
 generate_messages(
