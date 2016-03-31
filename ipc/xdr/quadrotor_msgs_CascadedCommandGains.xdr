@@ -1,0 +1,49 @@
+%{
+#include <cstring>
+#include <ipc_bridge/msgs/rosgraph_msgs_Header.h>
+#include <ipc_bridge/msgs/geometry_msgs_Vector3.h>
+%}
+
+ipc_type rosgraph_msgs_Header;
+ipc_type geometry_msgs_Vector3;
+
+struct quadrotor_msgs_CascadedCommandGains
+{
+ rosgraph_msgs_Header header;
+ geometry_msgs_Vector3 kR;
+ geometry_msgs_Vector3 kOm;
+
+%{
+  quadrotor_msgs_CascadedCommandGains()
+  {
+  }
+  quadrotor_msgs_CascadedCommandGains(const quadrotor_msgs_CascadedCommandGains& msg)
+  {
+    header = msg.header;
+    kR = msg.kR;
+    kOm = msg.kOm;
+  }
+  ~quadrotor_msgs_CascadedCommandGains()
+  {
+  }
+  quadrotor_msgs_CascadedCommandGains& operator= (const quadrotor_msgs_CascadedCommandGains& msg)
+  {
+    header = msg.header;
+    kR = msg.kR;
+    kOm = msg.kOm;
+
+    return *this;
+  }
+%}
+
+};
+
+%{
+namespace ipc_bridge
+{
+    namespace quadrotor_msgs
+    {
+        typedef quadrotor_msgs_CascadedCommandGains CascadedCommandGains;
+    }
+}
+%}
