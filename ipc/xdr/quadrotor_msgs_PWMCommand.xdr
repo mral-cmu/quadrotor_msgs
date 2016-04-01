@@ -1,13 +1,13 @@
 %{
 #include <cstring>
-#include <ipc_bridge/msgs/rosgraph_msgs_Header.h>
+#include <ipc_bridge/msgs/std_msgs_Header.h>
 %}
 
-ipc_type rosgraph_msgs_Header;
+ipc_type std_msgs_Header;
 
 struct quadrotor_msgs_PWMCommand
 {
- rosgraph_msgs_Header header;
+ std_msgs_Header header;
  float motor_pwm[4];
 
 %{

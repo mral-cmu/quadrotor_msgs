@@ -1,17 +1,17 @@
 %{
 #include <cstring>
-#include <ipc_bridge/msgs/rosgraph_msgs_Header.h>
+#include <ipc_bridge/msgs/std_msgs_Header.h>
 #include <ipc_bridge/msgs/geometry_msgs_Vector3.h>
 #include <ipc_bridge/msgs/geometry_msgs_Quaternion.h>
 %}
 
-ipc_type rosgraph_msgs_Header;
+ipc_type std_msgs_Header;
 ipc_type geometry_msgs_Vector3;
 ipc_type geometry_msgs_Quaternion;
 
 struct quadrotor_msgs_SO3Command
 {
- rosgraph_msgs_Header header;
+ std_msgs_Header header;
  geometry_msgs_Vector3 force;
  geometry_msgs_Quaternion rotation;
  geometry_msgs_Vector3 kR;

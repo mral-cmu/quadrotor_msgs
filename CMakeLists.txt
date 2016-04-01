@@ -30,6 +30,7 @@ add_message_files(
   GPIOTime.msg
   FSMMode.msg
   TrackingError.msg
+  OdometryArray.msg
 )
 
 generate_messages(
