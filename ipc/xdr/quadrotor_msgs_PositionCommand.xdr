@@ -1,0 +1,58 @@
+%{
+#include <cstring>
+#include <ipc_bridge/msgs/std_msgs_Header.h>
+#include <ipc_bridge/msgs/geometry_msgs_Vector3.h>
+%}
+
+ipc_type std_msgs_Header;
+ipc_type geometry_msgs_Vector3;
+
+struct quadrotor_msgs_PositionCommand
+{
+ std_msgs_Header header;
+ geometry_msgs_Vector3 pos;
+ geometry_msgs_Vector3 vel;
+ geometry_msgs_Vector3 acc;
+ geometry_msgs_Vector3 jerk;
+ float heading;
+
+%{
+  quadrotor_msgs_PositionCommand() : heading(0.0f)
+  {
+  }
+  quadrotor_msgs_PositionCommand(const quadrotor_msgs_PositionCommand& msg)
+  {
+    header = msg.header;
+    pos = msg.pos;
+    vel = msg.vel;
+    acc = msg.acc;
+    jerk = msg.jerk;
+    heading = msg.heading;
+  }
+  ~quadrotor_msgs_PositionCommand()
+  {
+  }
+  quadrotor_msgs_PositionCommand& operator= (const quadrotor_msgs_PositionCommand& msg)
+  {
+    header = msg.header;
+    pos = msg.pos;
+    vel = msg.vel;
+    acc = msg.acc;
+    jerk = msg.jerk;
+    heading = msg.heading;
+
+    return *this;
+  }
+%}
+
+};
+
+%{
+namespace ipc_bridge
+{
+    namespace quadrotor_msgs
+    {
+        typedef quadrotor_msgs_PositionCommand PositionCommand;
+    }
+}
+%}
