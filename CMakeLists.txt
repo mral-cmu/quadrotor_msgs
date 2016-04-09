@@ -31,6 +31,8 @@ add_message_files(
   FSMMode.msg
   TrackingError.msg
   OdometryArray.msg
+  PositionCommand.msg
+  PositionCommandGains.msg
 )
 
 generate_messages(
