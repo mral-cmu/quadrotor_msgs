@@ -28,7 +28,10 @@ namespace ipc_bridge_matlab
                    ipc_bridge_matlab::geometry_msgs::Vector3::ProcessMessage(msg.acc));
         mxSetField(out, 0, "jerk",
                    ipc_bridge_matlab::geometry_msgs::Vector3::ProcessMessage(msg.jerk));
-        mxSetField(out, 0, "heading", mxCreateDoubleScalar(msg.heading));
+
+        mxArray *heading = mxCreateDoubleMatrix(1, 3, mxREAL);
+        std::copy(msg.heading, msg.heading + 3, mxGetPr(heading));
+        mxSetField(out, 0, "heading", heading);
 
         return out;
       }
@@ -54,7 +57,8 @@ namespace ipc_bridge_matlab
         ipc_bridge_matlab::geometry_msgs::Vector3::ProcessArray(field, msg.jerk);
 
         field = mxGetField(a, 0, "heading");
-        msg.heading = mxGetScalar(field);
+        double* p = mxGetPr(field);
+        std::copy(p, p + 3, msg.heading);
 
         return SUCCESS;
       }

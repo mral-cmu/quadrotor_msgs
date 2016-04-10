@@ -35,7 +35,8 @@ void callback(const ipc_bridge::NAMESPACE::NAME &msg)
   out_msg.jerk.y = msg.jerk.y;
   out_msg.jerk.z = msg.jerk.z;
 
-  out_msg.heading = msg.heading;
+  for (unsigned int i = 0; i < 3; i++)
+    out_msg.heading[i] = msg.heading[i];
 
   pub.publish(out_msg);
 }
