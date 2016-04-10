@@ -3,7 +3,7 @@
 #include <ipc_bridge/ipc_bridge_matlab.h>
 #include <ipc_bridge/msgs/quadrotor_msgs_PDCommand.h>
 
-#include <ipc_bridge/matlab/rosgraph_msgs/rosgraph_msgs_Header.h>
+#include <ipc_bridge/matlab/std_msgs/std_msgs_Header.h>
 
 namespace ipc_bridge_matlab
 {
@@ -22,7 +22,7 @@ namespace ipc_bridge_matlab
         mxArray *out = mxCreateStructMatrix(1, 1, nfields, fields);
 
         mxSetField(out, 0, "header",
-                   ipc_bridge_matlab::Header::ProcessMessage(msg.header));
+                   ipc_bridge_matlab::std_msgs::Header::ProcessMessage(msg.header));
 
         mxSetField(out, 0, "roll", mxCreateDoubleScalar(msg.roll));
         mxSetField(out, 0, "pitch", mxCreateDoubleScalar(msg.pitch));
@@ -48,7 +48,7 @@ namespace ipc_bridge_matlab
         mxArray *field;
 
         field = mxGetField(a, 0, "header");
-        ipc_bridge_matlab::Header::ProcessArray(field, msg.header);
+        ipc_bridge_matlab::std_msgs::Header::ProcessArray(field, msg.header);
 
         field = mxGetField(a, 0, "roll");
         msg.roll = mxGetScalar(field);
@@ -97,7 +97,7 @@ namespace ipc_bridge_matlab
 
       static void Cleanup(ipc_bridge::quadrotor_msgs::PDCommand &msg)
       {
-        ipc_bridge_matlab::Header::Cleanup(msg.header);
+        ipc_bridge_matlab::std_msgs::Header::Cleanup(msg.header);
 
         return;
       }

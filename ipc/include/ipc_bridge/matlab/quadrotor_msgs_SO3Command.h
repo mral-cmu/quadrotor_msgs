@@ -3,7 +3,7 @@
 #include <ipc_bridge/ipc_bridge_matlab.h>
 #include <ipc_bridge/msgs/quadrotor_msgs_SO3Command.h>
 
-#include <ipc_bridge/matlab/rosgraph_msgs/rosgraph_msgs_Header.h>
+#include <ipc_bridge/matlab/std_msgs/std_msgs_Header.h>
 #include <ipc_bridge/matlab/geometry_msgs/geometry_msgs_Vector3.h>
 #include <ipc_bridge/matlab/geometry_msgs/geometry_msgs_Quaternion.h>
 
@@ -21,7 +21,7 @@ namespace ipc_bridge_matlab
         mxArray *out = mxCreateStructMatrix(1, 1, nfields, fields);
 
         mxSetField(out, 0, "header",
-                   ipc_bridge_matlab::Header::ProcessMessage(msg.header));
+                   ipc_bridge_matlab::std_msgs::Header::ProcessMessage(msg.header));
         mxSetField(out, 0, "force",
                    ipc_bridge_matlab::geometry_msgs::Vector3::ProcessMessage(msg.force));
         mxSetField(out, 0, "rotation",
@@ -40,7 +40,7 @@ namespace ipc_bridge_matlab
         mxArray *field;
 
         field = mxGetField(a, 0, "header");
-        ipc_bridge_matlab::Header::ProcessArray(field, msg.header);
+        ipc_bridge_matlab::std_msgs::Header::ProcessArray(field, msg.header);
 
         field = mxGetField(a, 0, "force");
         ipc_bridge_matlab::geometry_msgs::Vector3::ProcessArray(field,
@@ -63,7 +63,7 @@ namespace ipc_bridge_matlab
 
       static void Cleanup(ipc_bridge::quadrotor_msgs::SO3Command &msg)
       {
-        ipc_bridge_matlab::Header::Cleanup(msg.header);
+        ipc_bridge_matlab::std_msgs::Header::Cleanup(msg.header);
         ipc_bridge_matlab::geometry_msgs::Vector3::Cleanup(msg.force);
         ipc_bridge_matlab::geometry_msgs::Quaternion::Cleanup(msg.rotation);
         ipc_bridge_matlab::geometry_msgs::Vector3::Cleanup(msg.kR);

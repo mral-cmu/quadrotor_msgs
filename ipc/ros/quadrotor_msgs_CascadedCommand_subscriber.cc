@@ -12,6 +12,13 @@ NAMESPACE::NAME out_msg;
 
 void callback(const ipc_bridge::NAMESPACE::NAME &msg)
 {
+  out_msg.header.seq = msg.header.seq;
+  out_msg.header.stamp = ros::Time(msg.header.stamp);
+  if (msg.header.frame_id != 0)
+    out_msg.header.frame_id = std::string(msg.header.frame_id);
+  else
+    out_msg.header.frame_id = std::string("");
+
   out_msg.current_heading = msg.current_heading;
   out_msg.thrust = msg.thrust;
 

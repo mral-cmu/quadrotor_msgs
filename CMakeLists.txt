@@ -16,6 +16,7 @@ add_message_files(
   RPMCommand.msg
   PDCommand.msg
   CascadedCommand.msg
+  CascadedCommandGains.msg
   Segment.msg
   SegmentedPlan.msg
   CombinedState.msg
@@ -29,6 +30,9 @@ add_message_files(
   GPIOTime.msg
   FSMMode.msg
   TrackingError.msg
+  OdometryArray.msg
+  PositionCommand.msg
+  PositionCommandGains.msg
 )
 
 generate_messages(
