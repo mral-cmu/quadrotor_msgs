@@ -33,6 +33,7 @@ add_message_files(
   OdometryArray.msg
   PositionCommand.msg
   PositionCommandGains.msg
+  AccelDisturbance.msg
 )
 
 generate_messages(
