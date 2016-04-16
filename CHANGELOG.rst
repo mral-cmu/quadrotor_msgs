@@ -2,6 +2,18 @@
 Changelog for package quadrotor_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.0.16 (2016-04-16)
+-------------------
+* Add tele-operation mode to FSM mode msg
+* Update position command to include three heading fields (psi, dpsi, ddpsi)
+* IPC support for position cmd and gains msgs
+* Position command and gains msgs
+* OdometryArray msg and IPC support
+* Updating ipc msgs to support std_msgs Header (vs deprecated rosgraph_msgs)
+* ipc for cascaded gains msg
+* Add cascaded cmd gain msg
+* Contributors: Nathan Michael, eacappo
+
 0.0.15 (2016-02-11)
 -------------------
 * message to log power with timestamp
