@@ -14,6 +14,7 @@ add_message_files(
   SO3Command.msg
   PWMCommand.msg
   RPMCommand.msg
+  RotorforceCommand.msg
   PDCommand.msg
   CascadedCommand.msg
   CascadedCommandGains.msg
