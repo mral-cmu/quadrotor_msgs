@@ -1,2 +1,2 @@
 Header header
-float32[4] rotor_force
+float32[6] rotor_force

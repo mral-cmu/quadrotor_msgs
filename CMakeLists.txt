@@ -35,6 +35,9 @@ add_message_files(
   PositionCommand.msg
   PositionCommandGains.msg
   AccelDisturbance.msg
+  ScalarWithVarianceStamped.msg
+  StampedWaypoint.msg
+  StampedWaypointArray.msg
 )
 
 generate_messages(

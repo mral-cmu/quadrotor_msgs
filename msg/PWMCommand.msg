@@ -1,2 +1,2 @@
 Header header
-float32[4] motor_pwm
+float32[6] motor_pwm
