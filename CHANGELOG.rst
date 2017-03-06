@@ -2,6 +2,20 @@
 Changelog for package quadrotor_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.0.17 (2017-03-06)
+-------------------
+* Adding StampedWaypoint msg
+* add ScalarWithVarianceStamped message
+* increase array size for rotor force command message from 4 to 6
+* increase array size of rpm and pwm messages from 4 to 6
+* added rotor force command message to aid CASM computation
+* message support for concatenating to spline and popping and concatenating to spline
+* Changed order field to variable size array in Spline.msg
+* Removed dt and made order an array in Spline msg
+* Added pos_des, vel_des, yaw_des, yawdot_des fields to TrackingError.msg
+* adding AccelDisturbance message
+* Contributors: John Yao, Vishnu Desaraju, Wennie Tabib, Xuning Yang
+
 0.0.16 (2016-04-16)
 -------------------
 * Add tele-operation mode to FSM mode msg
