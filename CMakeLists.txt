@@ -38,6 +38,7 @@ add_message_files(
   ScalarWithVarianceStamped.msg
   StampedWaypoint.msg
   StampedWaypointArray.msg
+  PointArray.msg
 )
 
 generate_messages(
