@@ -6,6 +6,7 @@ uint8 TRACK_MODE         = 4
 uint8 LAND_MODE          = 5
 uint8 MOTORSOFF_MODE     = 6
 uint8 TELEOPERATION_MODE = 7
-
+uint8 DRIFT_AUTO_MODE    = 8
+uint8 DRIFT_TELE_MODE    = 9
 std_msgs/Header header
 uint8 mode
