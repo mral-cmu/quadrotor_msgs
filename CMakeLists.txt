@@ -34,7 +34,6 @@ add_message_files(
   OdometryArray.msg
   PositionCommand.msg
   PositionCommandGains.msg
-  AccelDisturbance.msg
   ScalarWithVarianceStamped.msg
   StampedWaypoint.msg
   StampedWaypointArray.msg
