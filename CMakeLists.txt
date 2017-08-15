@@ -62,11 +62,16 @@ if(ipc_bridge_FOUND)
   find_package(catkin REQUIRED roscpp)
 
   include_directories(
+    ${catkin_INCLUDE_DIRS}
     ${IPC_INCLUDE_DIR}
     ${ipc_bridge_INCLUDE_DIR}
   )
 
-  set(IPC_MATLAB_CFLAGS "-I${CMAKE_CURRENT_LIST_DIR}/ipc/include")
+  set(IPC_MATLAB_CFLAGS
+    "-I${CMAKE_CURRENT_LIST_DIR}/ipc/include"
+    "-I${IPC_INCLUDE_DIR}"
+    "-I${ipc_bridge_INCLUDE_DIR}"
+  )
   add_custom_target(generate_xdr_headers)
   add_subdirectory("ipc")
 
