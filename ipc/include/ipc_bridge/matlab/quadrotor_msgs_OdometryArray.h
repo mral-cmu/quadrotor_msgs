@@ -21,7 +21,7 @@ namespace ipc_bridge_matlab
         mxSetField(out, 0, "header",
                    ipc_bridge_matlab::std_msgs::Header::ProcessMessage(msg.header));
 
-        const int length = msg.odoms_length;
+        const size_t length = msg.odoms_length;
         mxArray *odoms = mxCreateCellArray(1, &length);
 
         for (unsigned int i = 0; i < length; i++)
