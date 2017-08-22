@@ -28,6 +28,7 @@ add_message_files(
   LidarLiteOutput.msg
   FlowObservation.msg
   Spline.msg
+  SplineArray.msg
   GPIOTime.msg
   FSMMode.msg
   TrackingError.msg
@@ -37,6 +38,7 @@ add_message_files(
   ScalarWithVarianceStamped.msg
   StampedWaypoint.msg
   StampedWaypointArray.msg
+  PointArray.msg
   StateEstimateValidity.msg
 )
 
