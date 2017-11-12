@@ -40,6 +40,7 @@ add_message_files(
   StampedWaypointArray.msg
   PointArray.msg
   StateEstimateValidity.msg
+  RelativeVerticalMotion.msg
 )
 
 generate_messages(
