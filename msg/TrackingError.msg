@@ -1,4 +1,5 @@
 Header header
+# actual = des + err
 geometry_msgs/Vector3 pos_err
 geometry_msgs/Vector3 vel_err
 float32 yaw_err
