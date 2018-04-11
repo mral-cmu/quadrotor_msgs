@@ -28,16 +28,19 @@ add_message_files(
   LidarLiteOutput.msg
   FlowObservation.msg
   Spline.msg
+  SplineArray.msg
   GPIOTime.msg
   FSMMode.msg
   TrackingError.msg
   OdometryArray.msg
   PositionCommand.msg
   PositionCommandGains.msg
-  AccelDisturbance.msg
   ScalarWithVarianceStamped.msg
   StampedWaypoint.msg
   StampedWaypointArray.msg
+  PointArray.msg
+  StateEstimateValidity.msg
+  RelativeVerticalMotion.msg
 )
 
 generate_messages(
