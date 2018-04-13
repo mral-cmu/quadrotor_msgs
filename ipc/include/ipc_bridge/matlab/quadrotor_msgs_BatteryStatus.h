@@ -1,15 +1,15 @@
 #ifndef IPC_BRIDGE_MATLAB_QUADROTOR_MSGS_BATTERY_VOLTAGE
 #define IPC_BRIDGE_MATLAB_QUADROTOR_MSGS_BATTERY_VOLTAGE
 #include <ipc_bridge/ipc_bridge_matlab.h>
-#include <ipc_bridge/msgs/quadrotor_msgs_BatteryVoltage.h>
+#include <ipc_bridge/msgs/quadrotor_msgs_BatteryStatus.h>
 
 namespace ipc_bridge_matlab
 {
   namespace quadrotor_msgs
   {
-    namespace BatteryVoltage
+    namespace BatteryStatus
     {
-      static mxArray* ProcessMessage(const ipc_bridge::quadrotor_msgs::BatteryVoltage &msg)
+      static mxArray* ProcessMessage(const ipc_bridge::quadrotor_msgs::BatteryStatus &msg)
       {
         const char *fields[] = {"voltage"};
         const int nfields = sizeof(fields)/sizeof(*fields);
@@ -21,7 +21,7 @@ namespace ipc_bridge_matlab
       }
 
       static int ProcessArray(const mxArray *a,
-                              ipc_bridge::quadrotor_msgs::BatteryVoltage &msg)
+                              ipc_bridge::quadrotor_msgs::BatteryStatus &msg)
       {
         mxArray *field;
 
@@ -31,7 +31,7 @@ namespace ipc_bridge_matlab
         return SUCCESS;
       }
 
-      static void Cleanup(ipc_bridge::quadrotor_msgs::BatteryVoltage &msg)
+      static void Cleanup(ipc_bridge::quadrotor_msgs::BatteryStatus &msg)
       {
         return;
       }

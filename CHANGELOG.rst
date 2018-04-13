@@ -109,7 +109,7 @@ Changelog for package quadrotor_msgs
 
 0.0.6 (2014-04-07)
 ------------------
-* Adding support for custom BatteryVoltage msg
+* Adding support for custom BatteryStatus msg
 * Merge branch 'develop' of nmichael.frc.ri.cmu.edu:msgs/quadrotor_msgs into develop
 * Updating PDCommand support and renaming Command to SO3Command
 * Contributors: Nathan Michael
