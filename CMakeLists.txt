@@ -41,6 +41,7 @@ add_message_files(
   PointArray.msg
   StateEstimateValidity.msg
   RelativeVerticalMotion.msg
+  l1_angvel_debug.msg
 )
 
 generate_messages(
