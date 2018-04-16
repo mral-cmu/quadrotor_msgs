@@ -22,7 +22,7 @@ add_message_files(
   SegmentedPlan.msg
   CombinedState.msg
   Status.msg
-  BatteryVoltage.msg
+  BatteryStatus.msg
   Power.msg
   AltitudeObservation.msg
   LidarLiteOutput.msg
