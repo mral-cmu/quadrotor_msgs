@@ -17,6 +17,7 @@ add_message_files(
   RotorforceCommand.msg
   PDCommand.msg
   CascadedCommand.msg
+  CascadedCommandVector.msg
   CascadedCommandGains.msg
   Segment.msg
   SegmentedPlan.msg
