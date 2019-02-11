@@ -2,6 +2,51 @@
 Changelog for package quadrotor_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.0.18 (2019-02-11)
+-------------------
+* Merge branch 'feature/explicit_epc' into 'develop'
+  Added l1 attitude debug messages coming from firmware
+  See merge request msgs/quadrotor_msgs!21
+* Correcting feature/explicit_epc branch
+* Adding L1 Attitude debug messages coming from Firmware
+* Merge branch 'feature/explicit_epc' into 'develop'
+  battery msg name change from BatteryVoltage to BatteryStatus
+  See merge request msgs/quadrotor_msgs!20
+* changing battery related messages from BatteryVoltage to BatteryStatus
+* Merge branch 'develop' of gitlab.rislab.org:msgs/quadrotor_msgs into develop
+* Merge branch 'feature/explicit_epc' into 'develop'
+  header timestamp and cell_id_epc msg addition in battery_status
+  See merge request msgs/quadrotor_msgs!19
+* header timestamp and cell_id_epc msg addition in battery_status
+* Merge branch 'develop' of gitlab.rislab.org:msgs/quadrotor_msgs into develop
+* Merge branch 'feature/explicit_epc' into 'develop'
+  adding current msg float
+  See merge request msgs/quadrotor_msgs!18
+* adding current msg float
+* adding current receive float32
+* Merge branch 'feature/state_estimate_validity' into develop
+* Merge branch 'feature/publish_desired_hod' into 'develop'
+  Add jerk_des and snap_des to TrackingError.msg
+  See merge request msgs/quadrotor_msgs!17
+* Add jerk_des and snap_des to TrackingError.msg
+* Merge branch 'feature/tracking_error_semantic_comment' into 'develop'
+  Add comment to TrackingError.msg indicating that err is actual - desired
+  See merge request !16
+* Add comment to TrackingError.msg indicating that err is actual - desired
+* add RelativeVerticalMotion message type
+* merge feature/0.17_vision_rc
+* Use size_t for mx array size to match API change.
+* Append IPC and ipc_bridge include paths to Matlab c flags
+* remove unused AccelDisturbance message type
+* add new FSM modes DRIFT_AUTO and DRIFT_TELE
+* add message type to indicate validity of states in state estimate
+* Merge branch 'feature/pointsArray' of gitlab.rasl.ri.cmu.edu:msgs/quadrotor_msgs into feature/0.17_vision_rc
+* Add a PointArray msg for publishing arrays of points
+* Merge branch 'feature/spline_array' of gitlab.rasl.ri.cmu.edu:msgs/quadrotor_msgs into feature/0.17_vision_rc
+* Adding num_splines to SplineArray.msg
+* Adding SplineArray.msg
+* Contributors: Alex Spitzer, John Yao, Mosam Dabhi, Nathan Michael, Xuning Yang, dnovichman
+
 0.0.17 (2017-03-06)
 -------------------
 * Adding StampedWaypoint msg
