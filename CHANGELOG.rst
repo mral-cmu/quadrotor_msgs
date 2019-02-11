@@ -2,6 +2,12 @@
 Changelog for package quadrotor_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.0.19 (2019-02-11)
+-------------------
+* Add CascadedCommandVector
+  Used to send vector cascaded commands from MPC position to MPC attitude.
+* Contributors: Alex Spitzer
+
 0.0.18 (2019-02-11)
 -------------------
 * Merge branch 'feature/explicit_epc' into 'develop'
