@@ -1,88 +1,39 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.8)
 project(quadrotor_msgs)
 
-find_package(catkin REQUIRED COMPONENTS
-  message_generation
-  std_msgs
-  geometry_msgs
-  nav_msgs
-  sensor_msgs
+find_package(builtin_interfaces REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(nav_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
+
+find_package(rosidl_default_generators REQUIRED)
+
+rosidl_generate_interfaces(${PROJECT_NAME}
+"msg/RPMCommand.msg"
+DEPENDENCIES builtin_interfaces std_msgs
 )
 
-add_message_files(
-  FILES
-  SO3Command.msg
-  PWMCommand.msg
-  RPMCommand.msg
-  RotorforceCommand.msg
-  PDCommand.msg
-  CascadedCommand.msg
-  CascadedCommandVector.msg
-  CascadedCommandGains.msg
-  Segment.msg
-  SegmentedPlan.msg
-  CombinedState.msg
-  Status.msg
-  BatteryStatus.msg
-  Power.msg
-  AltitudeObservation.msg
-  LidarLiteOutput.msg
-  FlowObservation.msg
-  Spline.msg
-  SplineArray.msg
-  GPIOTime.msg
-  FSMMode.msg
-  TrackingError.msg
-  OdometryArray.msg
-  PositionCommand.msg
-  PositionCommandGains.msg
-  ScalarWithVarianceStamped.msg
-  StampedWaypoint.msg
-  StampedWaypointArray.msg
-  PointArray.msg
-  StateEstimateValidity.msg
-  RelativeVerticalMotion.msg
-  l1_angvel_debug.msg
-)
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  add_compile_options(-Wall -Wextra -Wpedantic)
+endif()
 
-generate_messages(
-  DEPENDENCIES
-  std_msgs
-  geometry_msgs
-  nav_msgs
-  sensor_msgs
-)
+# find dependencies
+find_package(ament_cmake REQUIRED)
+# uncomment the following section in order to fill in
+# further dependencies manually.
+# find_package(<dependency> REQUIRED)
 
-catkin_package(
-  CATKIN_DEPENDS message_runtime std_msgs geometry_msgs nav_msgs sensor_msgs
-)
+if(BUILD_TESTING)
+  find_package(ament_lint_auto REQUIRED)
+  # the following line skips the linter which checks for copyrights
+  # comment the line when a copyright and license is added to all source files
+  set(ament_cmake_copyright_FOUND TRUE)
+  # the following line skips cpplint (only works in a git repo)
+  # comment the line when this package is in a git repo and when
+  # a copyright and license is added to all source files
+  set(ament_cmake_cpplint_FOUND TRUE)
+  ament_lint_auto_find_test_dependencies()
+endif()
 
-include_directories(include)
-
-find_package(ipc_bridge QUIET)
-if(ipc_bridge_FOUND)
-  set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${ipc_bridge_MODULE_PATH}")
-  find_package(IPC REQUIRED)
-  find_package(Matlab REQUIRED COMPONENTS mex)
-  find_package(catkin REQUIRED roscpp)
-
-  include_directories(
-    ${catkin_INCLUDE_DIRS}
-    ${IPC_INCLUDE_DIR}
-    ${ipc_bridge_INCLUDE_DIR}
-  )
-
-  set(IPC_MATLAB_CFLAGS
-    "-I${CMAKE_CURRENT_LIST_DIR}/ipc/include"
-    "-I${IPC_INCLUDE_DIR}"
-    "-I${ipc_bridge_INCLUDE_DIR}"
-  )
-  add_custom_target(generate_xdr_headers)
-  add_subdirectory("ipc")
-
-  install(DIRECTORY ipc/include/ipc_bridge/
-    DESTINATION include/ipc_bridge
-    FILES_MATCHING PATTERN "*.h"
-    PATTERN ".svn" EXCLUDE
-    )
-endif(ipc_bridge_FOUND)
+ament_package()
