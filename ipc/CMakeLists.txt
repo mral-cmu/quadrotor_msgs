@@ -1,1 +1,0 @@
-generate_ipc_messages()
