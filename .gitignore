@@ -41,3 +41,5 @@ CMakeCache.txt
 
 Ogre.log
 doc
+
+COLCON_IGNORE
